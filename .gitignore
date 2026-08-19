@@ -1,5 +1,62 @@
-# Data files
+# Data & Dataset files
 *.csv
+*.zip
+*.tar.gz
+*.jsonl
+accepted_2007_to_2018Q4.csv
+rejected_2007_to_2018Q4.csv
+pareceres_credito_2000.jsonl
+pareceres_credito_2000.csv
+credit_opinions_2000.jsonl
+credit_opinions_audit.csv
+credit_policy_pt.md
 
-# Python cache
+# Python cache & build
 __pycache__/
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+unsloth_compiled_cache/
+
+# Model weights & Checkpoints (Heavy artifacts)
+lora_model/
+model_gguf/
+outputs/
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Logs & Metrics
+*.log
+outputs/treinamento.log
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Machine Learning Caches
+.cache/
+wandb/
+
+# OS specific files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Specific files
+INSTRUCOES.md
+testar.py
