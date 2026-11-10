@@ -1,4 +1,4 @@
-<h1 align="center">🏦 CreditMaster</h1>
+<h1 align="center">CreditMaster</h1>
 <p align="center">
   <strong>A locally hosted LLM that writes policy-grounded credit opinions: Llama 3.1 8B fine-tuned with QLoRA and fed the relevant credit-policy sections through RAG.</strong>
 </p>
