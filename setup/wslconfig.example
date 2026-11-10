@@ -1,0 +1,6 @@
+# Copy to C:\Users\<you>\.wslconfig and run `wsl --shutdown` to apply.
+# Applies to all WSL2 distros. Sized for a 15 GB host: ~4 GB stay for Windows during training.
+# The GGUF export merges the 8B model in 16-bit (~16 GB), hence the large swap.
+[wsl2]
+memory=11GB
+swap=24GB

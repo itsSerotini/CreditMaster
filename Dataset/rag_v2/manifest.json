@@ -1,0 +1,59 @@
+{
+  "generator": "build_dataset.py",
+  "args": {
+    "input": "D:\\TCC\\Dataset\\accepted_2007_to_2018Q4.csv",
+    "policy": "D:\\TCC\\Dataset\\credit_policy_en.md",
+    "out_dir": "D:\\TCC\\Dataset\\rag_v2",
+    "total": 2000,
+    "suspend_ratio": 0.1,
+    "test_size": 0.15,
+    "scan_rows": 300000,
+    "retriever": "bm25",
+    "embed_model": "nomic-embed-text",
+    "min_k": 2,
+    "max_k": 8,
+    "distractor_prob": 0.5,
+    "seed": 42
+  },
+  "retriever": {
+    "backend": "bm25",
+    "min_k": 2,
+    "max_k": 8,
+    "pinned": [
+      11,
+      12,
+      13
+    ],
+    "embed_model": null
+  },
+  "pinned_sections": [
+    11,
+    12,
+    13
+  ],
+  "policy_sha256": "6f2af6f0989f2d2650e45ef24dc585e61a4a982028426b1dd0455023ac6e0017",
+  "quotas": {
+    "Approve": 600,
+    "Approve with Conditions": 600,
+    "Deny": 600,
+    "Suspend": 200
+  },
+  "counts": {
+    "train": {
+      "Suspend": 170,
+      "Approve": 510,
+      "Deny": 510,
+      "Approve with Conditions": 510
+    },
+    "test": {
+      "Approve with Conditions": 90,
+      "Deny": 90,
+      "Approve": 90,
+      "Suspend": 30
+    }
+  },
+  "n_train": 1700,
+  "n_test": 300,
+  "n_masked_suspend": 200,
+  "n_train_with_distractor": 885
+}

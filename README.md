@@ -1,73 +1,65 @@
 <h1 align="center">🏦 CreditMaster</h1>
 <p align="center">
-  <strong>An NLP-powered credit analysis model designed to automate risk assessment and generate credit opinions for the banking sector.</strong>
+  <strong>A locally hosted LLM that writes policy-grounded credit opinions: Llama 3.1 8B fine-tuned with QLoRA and fed the relevant credit-policy sections through RAG.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Ollama-0.1+-000000?style=for-the-badge&logo=ollama&logoColor=white" alt="Ollama">
-  <img src="https://img.shields.io/badge/NVIDIA-RTX_5060_Ti-76B900?style=for-the-badge&logo=nvidia&logoColor=white" alt="NVIDIA">
-  <img src="https://img.shields.io/badge/Linux_Mint-Supported-9CE311?style=for-the-badge&logo=linuxmint&logoColor=white" alt="Linux Mint">
+  <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Ollama-local-000000?style=for-the-badge&logo=ollama&logoColor=white" alt="Ollama">
+  <img src="https://img.shields.io/badge/NVIDIA-RTX_5060_Ti_8GB-76B900?style=for-the-badge&logo=nvidia&logoColor=white" alt="NVIDIA">
+  <img src="https://img.shields.io/badge/WSL2-Ubuntu_24.04-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="WSL2">
 </p>
 
 <hr>
 
-## 📋 Overview
+## Overview
 
-**CreditMaster** is a headless Generative Artificial Intelligence microservice tailored for the banking sector. Its primary objective is to automate the risk analysis workflow and generate technical credit opinions automatically.
+**CreditMaster** is the undergraduate thesis (TCC) project of an on-premise generative-AI service for the banking sector. Given a loan applicant's profile, it returns a structured credit opinion in JSON: recommendation, risk level, decision authority, strengths, risk factors, mitigants, the policy sections applied, and an executive opinion.
 
-The solution adopts a **100% on-premise (local)** execution approach, mitigating data privacy compliance risks (such as GDPR/LGPD) and ensuring absolute banking secrecy by eliminating the need to route sensitive financial data to proprietary cloud APIs.
+Everything runs **100% locally** (no cloud APIs), which keeps sensitive financial data under LGPD/GDPR and banking-secrecy constraints.
 
----
+## How it works
 
-## 🏗️ Hybrid Architecture
+| Component | What it does |
+|---|---|
+| **Rule engine** (`creditmaster/rules.py`) | Applies the institutional credit policy (`Dataset/credit_policy_en.md`) to produce the gold labels used for training and evaluation. |
+| **RAG** (`creditmaster/retriever.py`) | Selects the policy sections relevant to each applicant (BM25) and injects them into the prompt. |
+| **Fine-tuning** (`train.py`) | QLoRA on Llama 3.1 8B Instruct (4-bit) with Unsloth. The model is trained *with* retrieved context, RAFT-style, so it learns to use it and to ignore distractors. |
+| **Serving** | GGUF Q4_K_M model in Ollama (`creditmaster-rag-v2`), called by `query.py`. |
+| **Evaluation** (`evaluate.py`) | Compares base vs fine-tuned, with vs without RAG: accuracy, macro-F1, citation precision/recall, schema validity, numeric fidelity. |
 
-The core of the system operates through a composition of two advanced prompt engineering and AI techniques:
+> The model does **not** fetch the policy by itself. Always call it through `query.py` (or the `creditmaster` package); a bare `ollama run` gives no policy context and leads to invented citations.
 
-<table align="center" width="100%">
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🎯 Fine-Tuning (QLoRA)</h3>
-      <p>Structural modification of the <strong>Llama 3.1 8B Instruct</strong> base model's neural weights via the <strong>Unsloth</strong> library.</p>
-      <ul>
-        <li>Internalization of banking technical jargon.</li>
-        <li>Standardization of the syntactic format of credit opinions.</li>
-        <li>Extreme memory optimization for local GPU execution.</li>
-      </ul>
-    </td>
-    <td width="50%" valign="top">
-      <h3>📚 RAG (Retrieval-Augmented Generation)</h3>
-      <p>Dynamic injection of factual and regulatory context in real-time through a local vector database.</p>
-      <ul>
-        <li>Queries against internal credit manuals and Central Bank resolutions.</li>
-        <li>Drastic elimination of mathematical and regulatory hallucinations.</li>
-        <li>Bulletproof traceability for decision-making processes.</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+## Quick start (model already trained and imported into Ollama)
 
----
+```bash
+python query.py --profile examples/sample_profile.json
+```
 
-## 🛠️ Tech Stack
+Run it on Windows from the repository root, with Ollama running. Without `--profile`, the script asks for each field.
 
-<div align="center">
-  <table>
-    <tr>
-      <td><b>AI & Modeling</b></td>
-      <td>Llama 3.1 8B, Unsloth, QLoRA, GGUF</td>
-    </tr>
-    <tr>
-      <td><b>Inference & Local Engine</b></td>
-      <td>Ollama, CUDA Toolkit</td>
-    </tr>
-    <tr>
-      <td><b>Data Pipeline & Vectors</b></td>
-      <td>ChromaDB / FAISS, LangChain, Pandas</td>
-    </tr>
-    <tr>
-      <td><b>Service Interface</b></td>
-      <td>FastAPI / Flask (REST API), Python CLI</td>
-    </tr>
-  </table>
-</div>
+## Repository layout
+
+```
+query.py                  Query one applicant (RAG + Ollama)        ← start here
+evaluate.py               Evaluate configurations on the test set
+build_dataset.py          Build the v2 training/test dataset
+train.py                  QLoRA fine-tuning + GGUF export (WSL/Linux)
+inference_demo.py         Inference demo via Unsloth (WSL/Linux)
+plot_metrics.py           Loss curves + LaTeX table for the thesis
+creditmaster/             Core library: rules, policy, retriever, prompts, schema
+Dataset/                  Credit policy + LendingClub data + generated dataset
+setup/                    WSL2 environment setup (pinned versions)
+examples/                 Sample applicant profile
+legacy_v1/                First model (no RAG), kept as a baseline
+ollama/                   Modelfiles generated by training
+```
+
+## Documentation
+
+- **[RUNBOOK.md](RUNBOOK.md)**: step-by-step operations guide (setup, training, Ollama import, querying, evaluation, charts, troubleshooting).
+- **[documentation.md](documentation.md)**: full technical reference (architecture, every module and script, rules, results, incidents, open items), written for project continuity.
+
+## Tech stack
+
+Llama 3.1 8B Instruct · Unsloth 2026.8 · TRL 0.24 · PEFT (QLoRA r=16) · PyTorch 2.10 + CUDA 12.8 · llama.cpp GGUF Q4_K_M · Ollama · BM25 retrieval (pure Python) · WSL2 Ubuntu 24.04

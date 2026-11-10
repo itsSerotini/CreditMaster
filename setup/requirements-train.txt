@@ -1,0 +1,14 @@
+# CreditMaster — training/inference stack (Linux or WSL2, Python 3.12, CUDA 12.8)
+# Versions pinned to the v1 training run of 2026-08-17 (outputs/README.md, lora_model/adapter_config.json).
+# torch is installed separately from the CUDA index (see setup_wsl.sh):
+#   pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cu128
+# then: pip install -r requirements-train.txt -c constraints-train.txt
+unsloth==2026.8.10
+transformers==5.5.0
+trl==0.24.0
+datasets==4.3.0
+peft==0.19.1
+tokenizers==0.22.2
+pandas
+matplotlib
+seaborn

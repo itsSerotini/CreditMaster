@@ -1,0 +1,14 @@
+{
+  "gpu_name": "NVIDIA GeForce RTX 5060 Ti",
+  "total_vram_gb": 7.518798828125,
+  "peak_vram_gb": 6.443694114685059,
+  "train_samples": 1698,
+  "eval_samples": 300,
+  "epochs": 2,
+  "total_duration_seconds": 4536.4907,
+  "total_duration_minutes": 75.60817833333334,
+  "train_samples_per_second": 0.749,
+  "train_steps_per_second": 0.094,
+  "train_loss_final": 0.04975805483034816,
+  "timestamp_completed": "2026-08-17T02:16:42.838742"
+}

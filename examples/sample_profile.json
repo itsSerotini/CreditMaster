@@ -1,0 +1,15 @@
+{
+  "loan_amnt": "35000",
+  "term": "36 months",
+  "annual_inc": "105000",
+  "purpose": "credit_card",
+  "home_ownership": "MORTGAGE",
+  "emp_length": "6 years",
+  "dti": "31.5",
+  "fico_range_low": "725",
+  "delinq_2yrs": "0",
+  "inq_last_6mths": "3",
+  "revol_util": "31",
+  "open_acc": "33",
+  "pub_rec": "0"
+}

@@ -1,0 +1,163 @@
+================================================================================
+      🏦 CREDITMASTER - LOG DE TREINAMENTO DETALHADO (FINE-TUNING)      
+================================================================================
+
+[2026-08-17 01:00:35] Iniciando ambiente de treinamento...
+[2026-08-17 01:00:35] Hardware Detectado: NVIDIA GeForce RTX 5060 Ti
+[2026-08-17 01:00:35] VRAM Total Disponível: 7.52 GB
+[2026-08-17 01:00:35] PyTorch Version: 2.10.0+cu128 | CUDA Version: 12.8
+[2026-08-17 01:00:35] Carregando o modelo base 'unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit'...
+[2026-08-17 01:00:48] Modelo base carregado com sucesso em quantização 4-bit (NF4).
+[2026-08-17 01:00:48] Injetando adaptadores LoRA (Rank r=16, Alpha=16, Módulos=7)...
+[2026-08-17 01:00:50] Adaptadores QLoRA configurados com sucesso.
+[2026-08-17 01:00:50] Aplicando Llama 3.1 Chat Template e carregando dataset...
+[2026-08-17 01:01:01] Dataset processado: 1698 amostras de treino (85%) | 300 amostras de validação (15%).
+[2026-08-17 01:01:03] Aplicando 'train_on_responses_only' para isolar a perda apenas na resposta do assistente...
+[2026-08-17 01:01:05] Disparando rotina de otimização dos pesos...
+[2026-08-17 01:01:06] ================================================================================
+[2026-08-17 01:01:06] 🚀 INÍCIO DO TREINAMENTO QLoRA (SFT)
+[2026-08-17 01:01:06] Épocas Totais: 2 | Max Steps Estimados: 426
+[2026-08-17 01:01:06] Batch Size Efetivo: 8 (Batch 2 x Accum 4)
+[2026-08-17 01:01:06] Learning Rate Inicial: 0.0002 | Scheduler: SchedulerType.COSINE
+[2026-08-17 01:01:06] ================================================================================
+[2026-08-17 01:01:32] Step    5/426 | Epoch 0.02 | Train Loss: 1.3270 | LR: 3.64e-05 | VRAM: 6.41GB (85%) | Tempo:  0.4m | ETA: 37.1m
+[2026-08-17 01:01:55] Step   10/426 | Epoch 0.05 | Train Loss: 1.1277 | LR: 8.18e-05 | VRAM: 6.41GB (85%) | Tempo:  0.8m | ETA: 34.4m
+[2026-08-17 01:02:55] Step   10/426 | Epoch 0.05 |                    | [EVAL] Eval Loss: 0.8361 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo:  1.8m | ETA: 75.8m
+[2026-08-17 01:03:18] Step   15/426 | Epoch 0.07 | Train Loss: 0.6797 | LR: 1.27e-04 | VRAM: 6.44GB (86%) | Tempo:  2.2m | ETA: 60.5m
+[2026-08-17 01:03:41] Step   20/426 | Epoch 0.09 | Train Loss: 0.2888 | LR: 1.73e-04 | VRAM: 6.44GB (86%) | Tempo:  2.6m | ETA: 52.7m
+[2026-08-17 01:04:41] Step   20/426 | Epoch 0.09 |                    | [EVAL] Eval Loss: 0.1214 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo:  3.6m | ETA: 72.9m
+[2026-08-17 01:05:05] Step   25/426 | Epoch 0.12 | Train Loss: 0.0825 | LR: 2.00e-04 | VRAM: 6.44GB (86%) | Tempo:  4.0m | ETA: 64.0m
+[2026-08-17 01:05:28] Step   30/426 | Epoch 0.14 | Train Loss: 0.0448 | LR: 2.00e-04 | VRAM: 6.44GB (86%) | Tempo:  4.4m | ETA: 57.7m
+[2026-08-17 01:06:28] Step   30/426 | Epoch 0.14 |                    | [EVAL] Eval Loss: 0.0465 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo:  5.4m | ETA: 70.9m
+[2026-08-17 01:06:51] Step   35/426 | Epoch 0.16 | Train Loss: 0.0385 | LR: 2.00e-04 | VRAM: 6.44GB (86%) | Tempo:  5.8m | ETA: 64.3m
+[2026-08-17 01:07:14] Step   40/426 | Epoch 0.19 | Train Loss: 0.0257 | LR: 1.99e-04 | VRAM: 6.44GB (86%) | Tempo:  6.1m | ETA: 59.2m
+[2026-08-17 01:08:14] Step   40/426 | Epoch 0.19 |                    | [EVAL] Eval Loss: 0.0298 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo:  7.1m | ETA: 68.8m
+[2026-08-17 01:08:37] Step   45/426 | Epoch 0.21 | Train Loss: 0.0286 | LR: 1.99e-04 | VRAM: 6.44GB (86%) | Tempo:  7.5m | ETA: 63.7m
+[2026-08-17 01:09:00] Step   50/426 | Epoch 0.24 | Train Loss: 0.0220 | LR: 1.98e-04 | VRAM: 6.44GB (86%) | Tempo:  7.9m | ETA: 59.5m
+[2026-08-17 01:10:00] Step   50/426 | Epoch 0.24 |                    | [EVAL] Eval Loss: 0.0244 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo:  8.9m | ETA: 67.0m
+[2026-08-17 01:10:23] Step   55/426 | Epoch 0.26 | Train Loss: 0.0193 | LR: 1.97e-04 | VRAM: 6.44GB (86%) | Tempo:  9.3m | ETA: 62.7m
+[2026-08-17 01:10:47] Step   60/426 | Epoch 0.28 | Train Loss: 0.0171 | LR: 1.96e-04 | VRAM: 6.44GB (86%) | Tempo:  9.7m | ETA: 59.1m
+[2026-08-17 01:11:46] Step   60/426 | Epoch 0.28 |                    | [EVAL] Eval Loss: 0.0177 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 10.7m | ETA: 65.1m
+[2026-08-17 01:12:10] Step   65/426 | Epoch 0.31 | Train Loss: 0.0140 | LR: 1.95e-04 | VRAM: 6.44GB (86%) | Tempo: 11.1m | ETA: 61.5m
+[2026-08-17 01:12:33] Step   70/426 | Epoch 0.33 | Train Loss: 0.0175 | LR: 1.93e-04 | VRAM: 6.44GB (86%) | Tempo: 11.5m | ETA: 58.3m
+[2026-08-17 01:13:36] Step   70/426 | Epoch 0.33 |                    | [EVAL] Eval Loss: 0.0185 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 12.5m | ETA: 63.6m
+[2026-08-17 01:14:00] Step   75/426 | Epoch 0.35 | Train Loss: 0.0132 | LR: 1.92e-04 | VRAM: 6.44GB (86%) | Tempo: 12.9m | ETA: 60.4m
+[2026-08-17 01:14:24] Step   80/426 | Epoch 0.38 | Train Loss: 0.0123 | LR: 1.90e-04 | VRAM: 6.44GB (86%) | Tempo: 13.3m | ETA: 57.5m
+[2026-08-17 01:15:23] Step   80/426 | Epoch 0.38 |                    | [EVAL] Eval Loss: 0.0159 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 14.3m | ETA: 61.8m
+[2026-08-17 01:15:46] Step   85/426 | Epoch 0.40 | Train Loss: 0.0130 | LR: 1.89e-04 | VRAM: 6.44GB (86%) | Tempo: 14.7m | ETA: 58.9m
+[2026-08-17 01:16:10] Step   90/426 | Epoch 0.42 | Train Loss: 0.0135 | LR: 1.87e-04 | VRAM: 6.44GB (86%) | Tempo: 15.1m | ETA: 56.2m
+[2026-08-17 01:17:09] Step   90/426 | Epoch 0.42 |                    | [EVAL] Eval Loss: 0.0166 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 16.1m | ETA: 59.9m
+[2026-08-17 01:17:32] Step   95/426 | Epoch 0.45 | Train Loss: 0.0181 | LR: 1.85e-04 | VRAM: 6.44GB (86%) | Tempo: 16.4m | ETA: 57.3m
+[2026-08-17 01:17:56] Step  100/426 | Epoch 0.47 | Train Loss: 0.0223 | LR: 1.83e-04 | VRAM: 6.44GB (86%) | Tempo: 16.8m | ETA: 54.9m
+[2026-08-17 01:18:55] Step  100/426 | Epoch 0.47 |                    | [EVAL] Eval Loss: 0.0154 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 17.8m | ETA: 58.1m
+[2026-08-17 01:19:19] Step  105/426 | Epoch 0.49 | Train Loss: 0.0160 | LR: 1.80e-04 | VRAM: 6.44GB (86%) | Tempo: 18.2m | ETA: 55.7m
+[2026-08-17 01:19:42] Step  110/426 | Epoch 0.52 | Train Loss: 0.0119 | LR: 1.78e-04 | VRAM: 6.44GB (86%) | Tempo: 18.6m | ETA: 53.5m
+[2026-08-17 01:20:42] Step  110/426 | Epoch 0.52 |                    | [EVAL] Eval Loss: 0.0147 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 19.6m | ETA: 56.3m
+[2026-08-17 01:21:04] Step  115/426 | Epoch 0.54 | Train Loss: 0.0125 | LR: 1.75e-04 | VRAM: 6.44GB (86%) | Tempo: 20.0m | ETA: 54.0m
+[2026-08-17 01:21:28] Step  120/426 | Epoch 0.57 | Train Loss: 0.0129 | LR: 1.73e-04 | VRAM: 6.44GB (86%) | Tempo: 20.4m | ETA: 51.9m
+[2026-08-17 01:22:27] Step  120/426 | Epoch 0.57 |                    | [EVAL] Eval Loss: 0.0145 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 21.4m | ETA: 54.5m
+[2026-08-17 01:22:50] Step  125/426 | Epoch 0.59 | Train Loss: 0.0120 | LR: 1.70e-04 | VRAM: 6.44GB (86%) | Tempo: 21.7m | ETA: 52.4m
+[2026-08-17 01:23:13] Step  130/426 | Epoch 0.61 | Train Loss: 0.0117 | LR: 1.67e-04 | VRAM: 6.44GB (86%) | Tempo: 22.1m | ETA: 50.4m
+[2026-08-17 01:24:13] Step  130/426 | Epoch 0.61 |                    | [EVAL] Eval Loss: 0.0117 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 23.1m | ETA: 52.6m
+[2026-08-17 01:24:36] Step  135/426 | Epoch 0.64 | Train Loss: 0.0137 | LR: 1.64e-04 | VRAM: 6.44GB (86%) | Tempo: 23.5m | ETA: 50.7m
+[2026-08-17 01:24:59] Step  140/426 | Epoch 0.66 | Train Loss: 0.0188 | LR: 1.61e-04 | VRAM: 6.44GB (86%) | Tempo: 23.9m | ETA: 48.8m
+[2026-08-17 01:25:59] Step  140/426 | Epoch 0.66 |                    | [EVAL] Eval Loss: 0.0110 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 24.9m | ETA: 50.8m
+[2026-08-17 01:26:22] Step  145/426 | Epoch 0.68 | Train Loss: 0.0127 | LR: 1.58e-04 | VRAM: 6.44GB (86%) | Tempo: 25.3m | ETA: 49.0m
+[2026-08-17 01:26:45] Step  150/426 | Epoch 0.71 | Train Loss: 0.0084 | LR: 1.55e-04 | VRAM: 6.44GB (86%) | Tempo: 25.7m | ETA: 47.2m
+[2026-08-17 01:27:44] Step  150/426 | Epoch 0.71 |                    | [EVAL] Eval Loss: 0.0092 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 26.6m | ETA: 49.0m
+[2026-08-17 01:28:08] Step  155/426 | Epoch 0.73 | Train Loss: 0.0074 | LR: 1.52e-04 | VRAM: 6.44GB (86%) | Tempo: 27.0m | ETA: 47.3m
+[2026-08-17 01:28:31] Step  160/426 | Epoch 0.75 | Train Loss: 0.0099 | LR: 1.48e-04 | VRAM: 6.44GB (86%) | Tempo: 27.4m | ETA: 45.6m
+[2026-08-17 01:29:30] Step  160/426 | Epoch 0.75 |                    | [EVAL] Eval Loss: 0.0088 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 28.4m | ETA: 47.2m
+[2026-08-17 01:29:53] Step  165/426 | Epoch 0.78 | Train Loss: 0.0073 | LR: 1.45e-04 | VRAM: 6.44GB (86%) | Tempo: 28.8m | ETA: 45.5m
+[2026-08-17 01:30:17] Step  170/426 | Epoch 0.80 | Train Loss: 0.0068 | LR: 1.41e-04 | VRAM: 6.44GB (86%) | Tempo: 29.2m | ETA: 43.9m
+[2026-08-17 01:31:16] Step  170/426 | Epoch 0.80 |                    | [EVAL] Eval Loss: 0.0092 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 30.2m | ETA: 45.4m
+[2026-08-17 01:31:39] Step  175/426 | Epoch 0.82 | Train Loss: 0.0062 | LR: 1.38e-04 | VRAM: 6.44GB (86%) | Tempo: 30.6m | ETA: 43.8m
+[2026-08-17 01:32:02] Step  180/426 | Epoch 0.85 | Train Loss: 0.0083 | LR: 1.34e-04 | VRAM: 6.44GB (86%) | Tempo: 30.9m | ETA: 42.3m
+[2026-08-17 01:33:02] Step  180/426 | Epoch 0.85 |                    | [EVAL] Eval Loss: 0.0074 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 31.9m | ETA: 43.6m
+[2026-08-17 01:33:25] Step  185/426 | Epoch 0.87 | Train Loss: 0.0072 | LR: 1.31e-04 | VRAM: 6.44GB (86%) | Tempo: 32.3m | ETA: 42.1m
+[2026-08-17 01:33:48] Step  190/426 | Epoch 0.90 | Train Loss: 0.0072 | LR: 1.27e-04 | VRAM: 6.44GB (86%) | Tempo: 32.7m | ETA: 40.6m
+[2026-08-17 01:34:47] Step  190/426 | Epoch 0.90 |                    | [EVAL] Eval Loss: 0.0088 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 33.7m | ETA: 41.9m
+[2026-08-17 01:35:10] Step  195/426 | Epoch 0.92 | Train Loss: 0.0073 | LR: 1.23e-04 | VRAM: 6.44GB (86%) | Tempo: 34.1m | ETA: 40.4m
+[2026-08-17 01:35:34] Step  200/426 | Epoch 0.94 | Train Loss: 0.0083 | LR: 1.19e-04 | VRAM: 6.44GB (86%) | Tempo: 34.5m | ETA: 38.9m
+[2026-08-17 01:36:33] Step  200/426 | Epoch 0.94 |                    | [EVAL] Eval Loss: 0.0082 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 35.5m | ETA: 40.1m
+[2026-08-17 01:36:57] Step  205/426 | Epoch 0.97 | Train Loss: 0.0072 | LR: 1.15e-04 | VRAM: 6.44GB (86%) | Tempo: 35.9m | ETA: 38.7m
+[2026-08-17 01:37:20] Step  210/426 | Epoch 0.99 | Train Loss: 0.0090 | LR: 1.12e-04 | VRAM: 6.44GB (86%) | Tempo: 36.2m | ETA: 37.3m
+[2026-08-17 01:38:19] Step  210/426 | Epoch 0.99 |                    | [EVAL] Eval Loss: 0.0077 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 37.2m | ETA: 38.3m
+[2026-08-17 01:38:39] Step  215/426 | Epoch 1.01 | Train Loss: 0.0079 | LR: 1.08e-04 | VRAM: 6.44GB (86%) | Tempo: 37.6m | ETA: 36.9m
+[2026-08-17 01:39:02] Step  220/426 | Epoch 1.03 | Train Loss: 0.0053 | LR: 1.04e-04 | VRAM: 6.44GB (86%) | Tempo: 37.9m | ETA: 35.5m
+[2026-08-17 01:40:01] Step  220/426 | Epoch 1.03 |                    | [EVAL] Eval Loss: 0.0072 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 38.9m | ETA: 36.4m
+[2026-08-17 01:40:25] Step  225/426 | Epoch 1.06 | Train Loss: 0.0059 | LR: 1.00e-04 | VRAM: 6.44GB (86%) | Tempo: 39.3m | ETA: 35.1m
+[2026-08-17 01:40:48] Step  230/426 | Epoch 1.08 | Train Loss: 0.0051 | LR: 9.61e-05 | VRAM: 6.44GB (86%) | Tempo: 39.7m | ETA: 33.8m
+[2026-08-17 01:41:48] Step  230/426 | Epoch 1.08 |                    | [EVAL] Eval Loss: 0.0067 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 40.7m | ETA: 34.7m
+[2026-08-17 01:42:11] Step  235/426 | Epoch 1.10 | Train Loss: 0.0055 | LR: 9.22e-05 | VRAM: 6.44GB (86%) | Tempo: 41.1m | ETA: 33.4m
+[2026-08-17 01:42:34] Step  240/426 | Epoch 1.13 | Train Loss: 0.0081 | LR: 8.84e-05 | VRAM: 6.44GB (86%) | Tempo: 41.5m | ETA: 32.1m
+[2026-08-17 01:43:33] Step  240/426 | Epoch 1.13 |                    | [EVAL] Eval Loss: 0.0060 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 42.5m | ETA: 32.9m
+[2026-08-17 01:43:56] Step  245/426 | Epoch 1.15 | Train Loss: 0.0053 | LR: 8.45e-05 | VRAM: 6.44GB (86%) | Tempo: 42.8m | ETA: 31.7m
+[2026-08-17 01:44:19] Step  250/426 | Epoch 1.17 | Train Loss: 0.0045 | LR: 8.07e-05 | VRAM: 6.44GB (86%) | Tempo: 43.2m | ETA: 30.4m
+[2026-08-17 01:45:19] Step  250/426 | Epoch 1.17 |                    | [EVAL] Eval Loss: 0.0061 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 44.2m | ETA: 31.1m
+[2026-08-17 01:45:42] Step  255/426 | Epoch 1.20 | Train Loss: 0.0059 | LR: 7.69e-05 | VRAM: 6.44GB (86%) | Tempo: 44.6m | ETA: 29.9m
+[2026-08-17 01:46:05] Step  260/426 | Epoch 1.22 | Train Loss: 0.0038 | LR: 7.31e-05 | VRAM: 6.44GB (86%) | Tempo: 45.0m | ETA: 28.7m
+[2026-08-17 01:47:04] Step  260/426 | Epoch 1.22 |                    | [EVAL] Eval Loss: 0.0057 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 46.0m | ETA: 29.4m
+[2026-08-17 01:47:28] Step  265/426 | Epoch 1.24 | Train Loss: 0.0052 | LR: 6.94e-05 | VRAM: 6.44GB (86%) | Tempo: 46.4m | ETA: 28.2m
+[2026-08-17 01:47:51] Step  270/426 | Epoch 1.27 | Train Loss: 0.0042 | LR: 6.57e-05 | VRAM: 6.44GB (86%) | Tempo: 46.8m | ETA: 27.0m
+[2026-08-17 01:48:50] Step  270/426 | Epoch 1.27 |                    | [EVAL] Eval Loss: 0.0057 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 47.7m | ETA: 27.6m
+[2026-08-17 01:49:13] Step  275/426 | Epoch 1.29 | Train Loss: 0.0045 | LR: 6.21e-05 | VRAM: 6.44GB (86%) | Tempo: 48.1m | ETA: 26.4m
+[2026-08-17 01:49:36] Step  280/426 | Epoch 1.32 | Train Loss: 0.0049 | LR: 5.85e-05 | VRAM: 6.44GB (86%) | Tempo: 48.5m | ETA: 25.3m
+[2026-08-17 01:50:36] Step  280/426 | Epoch 1.32 |                    | [EVAL] Eval Loss: 0.0057 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 49.5m | ETA: 25.8m
+[2026-08-17 01:50:59] Step  285/426 | Epoch 1.34 | Train Loss: 0.0052 | LR: 5.50e-05 | VRAM: 6.44GB (86%) | Tempo: 49.9m | ETA: 24.7m
+[2026-08-17 01:51:22] Step  290/426 | Epoch 1.36 | Train Loss: 0.0040 | LR: 5.16e-05 | VRAM: 6.44GB (86%) | Tempo: 50.3m | ETA: 23.6m
+[2026-08-17 01:52:21] Step  290/426 | Epoch 1.36 |                    | [EVAL] Eval Loss: 0.0055 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 51.3m | ETA: 24.0m
+[2026-08-17 01:52:44] Step  295/426 | Epoch 1.39 | Train Loss: 0.0039 | LR: 4.82e-05 | VRAM: 6.44GB (86%) | Tempo: 51.6m | ETA: 22.9m
+[2026-08-17 01:53:07] Step  300/426 | Epoch 1.41 | Train Loss: 0.0057 | LR: 4.49e-05 | VRAM: 6.44GB (86%) | Tempo: 52.0m | ETA: 21.9m
+[2026-08-17 01:54:07] Step  300/426 | Epoch 1.41 |                    | [EVAL] Eval Loss: 0.0054 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 53.0m | ETA: 22.3m
+[2026-08-17 01:54:30] Step  305/426 | Epoch 1.43 | Train Loss: 0.0045 | LR: 4.17e-05 | VRAM: 6.44GB (86%) | Tempo: 53.4m | ETA: 21.2m
+[2026-08-17 01:54:54] Step  310/426 | Epoch 1.46 | Train Loss: 0.0039 | LR: 3.86e-05 | VRAM: 6.44GB (86%) | Tempo: 53.8m | ETA: 20.1m
+[2026-08-17 01:55:53] Step  310/426 | Epoch 1.46 |                    | [EVAL] Eval Loss: 0.0054 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 54.8m | ETA: 20.5m
+[2026-08-17 01:56:16] Step  315/426 | Epoch 1.48 | Train Loss: 0.0033 | LR: 3.56e-05 | VRAM: 6.44GB (86%) | Tempo: 55.2m | ETA: 19.4m
+[2026-08-17 01:56:39] Step  320/426 | Epoch 1.50 | Train Loss: 0.0034 | LR: 3.27e-05 | VRAM: 6.44GB (86%) | Tempo: 55.6m | ETA: 18.4m
+[2026-08-17 01:57:38] Step  320/426 | Epoch 1.50 |                    | [EVAL] Eval Loss: 0.0051 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 56.5m | ETA: 18.7m
+[2026-08-17 01:58:02] Step  325/426 | Epoch 1.53 | Train Loss: 0.0057 | LR: 2.98e-05 | VRAM: 6.44GB (86%) | Tempo: 56.9m | ETA: 17.7m
+[2026-08-17 01:58:25] Step  330/426 | Epoch 1.55 | Train Loss: 0.0031 | LR: 2.71e-05 | VRAM: 6.44GB (86%) | Tempo: 57.3m | ETA: 16.7m
+[2026-08-17 01:59:25] Step  330/426 | Epoch 1.55 |                    | [EVAL] Eval Loss: 0.0050 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 58.3m | ETA: 17.0m
+[2026-08-17 01:59:48] Step  335/426 | Epoch 1.57 | Train Loss: 0.0036 | LR: 2.45e-05 | VRAM: 6.44GB (86%) | Tempo: 58.7m | ETA: 15.9m
+[2026-08-17 02:00:10] Step  340/426 | Epoch 1.60 | Train Loss: 0.0033 | LR: 2.20e-05 | VRAM: 6.44GB (86%) | Tempo: 59.1m | ETA: 14.9m
+[2026-08-17 02:01:10] Step  340/426 | Epoch 1.60 |                    | [EVAL] Eval Loss: 0.0049 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 60.1m | ETA: 15.2m
+[2026-08-17 02:01:33] Step  345/426 | Epoch 1.62 | Train Loss: 0.0055 | LR: 1.97e-05 | VRAM: 6.44GB (86%) | Tempo: 60.5m | ETA: 14.2m
+[2026-08-17 02:01:57] Step  350/426 | Epoch 1.65 | Train Loss: 0.0049 | LR: 1.74e-05 | VRAM: 6.44GB (86%) | Tempo: 60.9m | ETA: 13.2m
+[2026-08-17 02:02:56] Step  350/426 | Epoch 1.65 |                    | [EVAL] Eval Loss: 0.0052 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 61.8m | ETA: 13.4m
+[2026-08-17 02:03:20] Step  355/426 | Epoch 1.67 | Train Loss: 0.0047 | LR: 1.53e-05 | VRAM: 6.44GB (86%) | Tempo: 62.2m | ETA: 12.4m
+[2026-08-17 02:03:43] Step  360/426 | Epoch 1.69 | Train Loss: 0.0035 | LR: 1.33e-05 | VRAM: 6.44GB (86%) | Tempo: 62.6m | ETA: 11.5m
+[2026-08-17 02:04:43] Step  360/426 | Epoch 1.69 |                    | [EVAL] Eval Loss: 0.0048 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 63.6m | ETA: 11.7m
+[2026-08-17 02:05:06] Step  365/426 | Epoch 1.72 | Train Loss: 0.0034 | LR: 1.14e-05 | VRAM: 6.44GB (86%) | Tempo: 64.0m | ETA: 10.7m
+[2026-08-17 02:05:29] Step  370/426 | Epoch 1.74 | Train Loss: 0.0054 | LR: 9.66e-06 | VRAM: 6.44GB (86%) | Tempo: 64.4m | ETA:  9.7m
+[2026-08-17 02:06:28] Step  370/426 | Epoch 1.74 |                    | [EVAL] Eval Loss: 0.0049 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 65.4m | ETA:  9.9m
+[2026-08-17 02:06:51] Step  375/426 | Epoch 1.76 | Train Loss: 0.0051 | LR: 8.06e-06 | VRAM: 6.44GB (86%) | Tempo: 65.8m | ETA:  8.9m
+[2026-08-17 02:07:15] Step  380/426 | Epoch 1.79 | Train Loss: 0.0046 | LR: 6.60e-06 | VRAM: 6.44GB (86%) | Tempo: 66.2m | ETA:  8.0m
+[2026-08-17 02:08:15] Step  380/426 | Epoch 1.79 |                    | [EVAL] Eval Loss: 0.0045 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 67.1m | ETA:  8.1m
+[2026-08-17 02:08:38] Step  385/426 | Epoch 1.81 | Train Loss: 0.0030 | LR: 5.29e-06 | VRAM: 6.44GB (86%) | Tempo: 67.5m | ETA:  7.2m
+[2026-08-17 02:09:01] Step  390/426 | Epoch 1.83 | Train Loss: 0.0032 | LR: 4.11e-06 | VRAM: 6.44GB (86%) | Tempo: 67.9m | ETA:  6.3m
+[2026-08-17 02:10:00] Step  390/426 | Epoch 1.83 |                    | [EVAL] Eval Loss: 0.0044 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 68.9m | ETA:  6.4m
+[2026-08-17 02:10:23] Step  395/426 | Epoch 1.86 | Train Loss: 0.0029 | LR: 3.08e-06 | VRAM: 6.44GB (86%) | Tempo: 69.3m | ETA:  5.4m
+[2026-08-17 02:10:47] Step  400/426 | Epoch 1.88 | Train Loss: 0.0020 | LR: 2.20e-06 | VRAM: 6.44GB (86%) | Tempo: 69.7m | ETA:  4.5m
+[2026-08-17 02:11:46] Step  400/426 | Epoch 1.88 |                    | [EVAL] Eval Loss: 0.0045 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 70.7m | ETA:  4.6m
+[2026-08-17 02:12:10] Step  405/426 | Epoch 1.90 | Train Loss: 0.0029 | LR: 1.46e-06 | VRAM: 6.44GB (86%) | Tempo: 71.1m | ETA:  3.7m
+[2026-08-17 02:12:33] Step  410/426 | Epoch 1.93 | Train Loss: 0.0028 | LR: 8.73e-07 | VRAM: 6.44GB (86%) | Tempo: 71.5m | ETA:  2.8m
+[2026-08-17 02:13:32] Step  410/426 | Epoch 1.93 |                    | [EVAL] Eval Loss: 0.0045 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 72.4m | ETA:  2.8m
+[2026-08-17 02:13:56] Step  415/426 | Epoch 1.95 | Train Loss: 0.0029 | LR: 4.35e-07 | VRAM: 6.44GB (86%) | Tempo: 72.8m | ETA:  1.9m
+[2026-08-17 02:14:19] Step  420/426 | Epoch 1.98 | Train Loss: 0.0035 | LR: 1.48e-07 | VRAM: 6.44GB (86%) | Tempo: 73.2m | ETA:  1.0m
+[2026-08-17 02:15:18] Step  420/426 | Epoch 1.98 |                    | [EVAL] Eval Loss: 0.0044 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 74.2m | ETA:  1.1m
+[2026-08-17 02:15:41] Step  425/426 | Epoch 2.00 | Train Loss: 0.0045 | LR: 1.21e-08 | VRAM: 6.44GB (86%) | Tempo: 74.6m | ETA:  0.2m
+[2026-08-17 02:16:42] Step  426/426 | Epoch 2.00 |                    | [EVAL] Eval Loss: 0.0045 ⭐ | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 75.6m | ETA:  0.0m
+[2026-08-17 02:16:42] Step  426/426 | Epoch 2.00 |                    | LR: 0.00e+00 | VRAM: 6.44GB (86%) | Tempo: 75.6m | ETA:  0.0m
+[2026-08-17 02:16:42] ================================================================================
+[2026-08-17 02:16:42] 🏁 TREINAMENTO CONCLUÍDO COM SUCESSO!
+[2026-08-17 02:16:42] Tempo Total de Execução: 75.61 minutos (4536.5 segundos)
+[2026-08-17 02:16:42] Total de Passos Executados: 426
+[2026-08-17 02:16:42] Pico Máximo de VRAM Alocada: 6.44 GB / 7.52 GB
+[2026-08-17 02:16:42] Convergência de Perda: 1.3270 -> 0.0045 (Redução de 99.7%)
+[2026-08-17 02:16:42] ================================================================================
+[2026-08-17 02:16:42] Exportando logs e métricas estruturadas para relatórios e gráficos do LaTeX...
+[2026-08-17 02:16:42] Métricas salvas com sucesso em: outputs/training_metrics.csv
+[2026-08-17 02:16:42] Salvando adaptadores LoRA treinados...
+[2026-08-17 02:16:43] Pesos LoRA salvos na pasta 'lora_model/'
+[2026-08-17 02:16:43] Exportando modelo quantizado em formato GGUF (Q4_K_M) para 'model_gguf/'...

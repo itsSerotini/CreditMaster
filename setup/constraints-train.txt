@@ -1,0 +1,7 @@
+# Hard pins applied with `pip install -c constraints-train.txt` so that transitive
+# dependencies of unsloth cannot upgrade the stack used in the v1 training run.
+torch==2.10.0
+torchvision==0.25.0
+# unsloth 2026.8.10 patches TRL source code; newer unsloth_zoo releases break that patch
+# ("source anchor not found ... sft_prepare_dataset") and silently fall back to plain TRL.
+unsloth_zoo>=2026.8.6,<2026.9
